@@ -64,9 +64,13 @@ app.get("/login", (req, res) => {
 app.post("/register", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
+  const email = req.body.email
+  const phone = req.body.phone
 
   console.log("username: ", username) 
   console.log("password: ", password) 
+  console.log("email: ", email) 
+  console.log("phone: ", phone) 
 
   
 });
