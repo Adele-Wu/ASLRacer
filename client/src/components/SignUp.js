@@ -10,9 +10,7 @@ function SignUp() {
     const [emailReg, setEmailReg] = useState(""); 
     const [phoneReg, setPhoneReg] = useState(0) 
   
-  
-    Axios.defaults.withCredentials = true;
-  
+    
     const register = () => {
       Axios.post("http://localhost:3001/register", {
         username: usernameReg,

@@ -12,6 +12,7 @@ function SignIn() {
   const [loginStatus, setLoginStatus] = useState("");
 
 
+
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
       //checking
@@ -34,6 +35,7 @@ function SignIn() {
       } else {
         console.log("User is logged in")
         setLoginStatus(response.data[0].username);
+        Axios.defaults.withCredentials = true;
         history.push("/")
       }
     });
