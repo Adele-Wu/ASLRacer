@@ -32,7 +32,21 @@ function Home() {
                 </> 
             )
         }
-        <img src="https://cdn.discordapp.com/attachments/751224555267162193/952110054381875250/advantage-trophy-logo.png" />
+
+        <div className='section1'>
+          <h1>
+            Want to learn American Sign Language in a fun and engaging way?
+          </h1>
+          <h4>
+            ASL Racer is a game where you use American Sign Language to challenge yourself to learn sign language.
+          </h4>
+          <button onClick={() => history.push("/game")}>Play</button>
+          <img width="550" height="250" 
+            src="https://cdn.discordapp.com/attachments/754451242784129215/952290511933309000/ASL.PNG" />
+        </div>
+
+        <img width="300" height="250" 
+          src="https://cdn.discordapp.com/attachments/751224555267162193/952110054381875250/advantage-trophy-logo.png" />
         <h1>High Scroes</h1>
 
     </div>
