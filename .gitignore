@@ -1,2 +1,5 @@
 server/node_modules 
 client_node_modules 
+
+*.pyc
+pycache
