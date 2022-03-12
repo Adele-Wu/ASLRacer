@@ -37,8 +37,6 @@ function Home() {
 
                     <img width="550" height="250" 
                       src="https://cdn.discordapp.com/attachments/754451242784129215/952290511933309000/ASL.PNG" />
-                    <img width="300" height="250" 
-                      src="https://cdn.discordapp.com/attachments/751224555267162193/952110054381875250/advantage-trophy-logo.png" />
                      <button onClick={() => history.push("/game")}>Play</button>
                 </> 
             ): (
@@ -57,6 +55,8 @@ function Home() {
             )
         }
         <h1>High Scores</h1>
+        <img width="300" height="250" 
+          src="https://cdn.discordapp.com/attachments/751224555267162193/952110054381875250/advantage-trophy-logo.png" />
 
     </div>
   )
