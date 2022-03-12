@@ -38,8 +38,35 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'Javier','$2b$10$gUo4EtjY..hkYBU.VurqXefvV3xXbUYXqq7UBb8FcrhDiS5M3Me/2','javier@mail.com',874747),(2,'Javier','$2b$10$A9gvd2MEzVYX6ZxolfOt4.R/9wZrd6YvLmMYyLAt2cERwhcGKvAYG','javier@mail.com',874747);
+INSERT INTO `User` VALUES (1,'Javier','$2b$10$gUo4EtjY..hkYBU.VurqXefvV3xXbUYXqq7UBb8FcrhDiS5M3Me/2','javier@mail.com',874747);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `User_Dashboard`
+--
+
+DROP TABLE IF EXISTS `User_Dashboard`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `User_Dashboard` (
+  `idUser_Dashboard` int NOT NULL,
+  `User_id` int NOT NULL,
+  `scores` int NOT NULL,
+  `timeFinish` datetime NOT NULL,
+  PRIMARY KEY (`idUser_Dashboard`),
+  KEY `fk_User_Dashboard_User_idx` (`User_id`),
+  CONSTRAINT `fk_User_Dashboard_User` FOREIGN KEY (`User_id`) REFERENCES `User` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `User_Dashboard`
+--
+
+LOCK TABLES `User_Dashboard` WRITE;
+/*!40000 ALTER TABLE `User_Dashboard` DISABLE KEYS */;
+/*!40000 ALTER TABLE `User_Dashboard` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-11 21:04:41
+-- Dump completed on 2022-03-11 21:57:43
