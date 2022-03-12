@@ -14,6 +14,7 @@ function SignIn() {
 
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
+      //checking
       console.log("From the login page: ", response.data) 
       if (response.data.loggedIn === true) {
         setLoginStatus(response.data.user[0].username);
