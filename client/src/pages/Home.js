@@ -1,6 +1,7 @@
 import React, { useState, useEffect }from 'react'
 import { useHistory } from 'react-router-dom'
 import Axios from 'axios'
+import './Home.css';
 
 function Home() {
   let history = useHistory() 
@@ -47,7 +48,7 @@ function Home() {
 
         <img width="300" height="250" 
           src="https://cdn.discordapp.com/attachments/751224555267162193/952110054381875250/advantage-trophy-logo.png" />
-        <h1>High Scroes</h1>
+        <h1>High Scores</h1>
 
     </div>
   )
