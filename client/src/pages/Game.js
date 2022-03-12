@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import * as tf from "@tensorflow/tfjs";
 import Webcam from "react-webcam";
 import {drawRect} from "../assets/labels"; 
+import  Axios  from 'axios'
 
 
 function Game() {
@@ -10,6 +11,23 @@ function Game() {
 
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
+
+
+  const [loginStatus, setLoginStatus] = useState(false)
+  const [playerName, setPlayerName] = useState("") 
+
+
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/login").then((response) => {
+      console.log(response.data) 
+      if (response.data.loggedIn === true) {
+        Axios.defaults.withCredentials = true;
+        setLoginStatus(response.data.loggedIn);
+        setPlayerName(response.data.user[0].username) 
+      }
+    });
+  }, []);
 
   const runCoco = async () => {
     
@@ -78,38 +96,52 @@ function Game() {
         <h5>Time Left:</h5>
         <h5>Current Count: </h5>
         <h5>High Score: </h5>
-        <div className="webcam">
-          <Webcam
-            ref={webcamRef}
-            muted={true} 
-            style={{
-              position: "absolute",
-              marginLeft: "auto",
-              marginRight: "auto",
-              left: 0,
-              right: 0,
-              textAlign: "center",
-              zindex: 9,
-              width: 640,
-              height: 480,
-            }}
-          />
+          {
+            loginStatus === true? (
+              <div>
+                <div className="webcam">
+                  <Webcam
+                      ref={webcamRef}
+                      muted={true} 
+                      style={{
+                                position: "absolute",
+                                marginLeft: "auto",
+                                marginRight: "auto",
+                                left: 0,
+                                right: 0,
+                                textAlign: "center",
+                                zindex: 9,
+                                width: 640,
+                                height: 480,
+                    }}
+                  />
 
-          <canvas
-            ref={canvasRef}
-            style={{
-              position: "absolute",
-              marginLeft: "auto",
-              marginRight: "auto",
-              left: 0,
-              right: 0,
-              textAlign: "center",
-              zindex: 8,
-              width: 640,
-              height: 480,
-            }}
-          />
-        </div>
+                  <canvas
+                    ref={canvasRef}
+                    style={{
+                              position: "absolute",
+                              marginLeft: "auto",
+                              marginRight: "auto",
+                              left: 0,
+                              right: 0,
+                              textAlign: "center",
+                              zindex: 8,
+                              width: 640,
+                              height: 480,
+                            }}
+                    />
+                  </div>
+                  <h1>Hi {playerName}</h1> 
+              </div> 
+            ) : (
+              <div> 
+                <h1>Login or Register to play</h1>
+                <button onClick={() => history.push("/login")}>Login In</button>
+                <button onClick={() => history.push("/signup")}>Sign Up</button>
+              </div> 
+            )
+          }
+         
         <button onClick={() => history.push("/")}>Home</button> 
     </div>
   )
