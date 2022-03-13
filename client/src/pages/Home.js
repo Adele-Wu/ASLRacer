@@ -62,27 +62,33 @@ function Home() {
           </div>
 
         <div className='section2 center'>
-          <h1 className='centerHS hsText'>High Scores</h1>
-          {
-            getPlayers.map((name) => {
-              return (
-                <>
-                  <h5>{name}</h5> 
-                </>
-              )
-            })
-          }
-          {
-             getScores.map((scores) => {
-              return (
-                <>
-                  <h5>{scores}</h5> 
-                </>
-              )
-            })
-          }
           <img className='centerTrophy' width="300" height="250" 
             src="https://cdn.discordapp.com/attachments/751224555267162193/952110054381875250/advantage-trophy-logo.png" />
+          <h1 className='centerHS hsText'>High Scores</h1>
+          <div className='allFlex'>
+            <div className='hsName'>
+              {
+                getPlayers.map((name) => {
+                  return (
+                    <>
+                      <h5>{name}</h5> 
+                    </>
+                  )
+                })
+              }
+            </div>
+            <div className='hsScore'>
+              {
+                getScores.map((scores) => {
+                  return (
+                    <>
+                      <h5>{scores}</h5> 
+                    </>
+                  )
+                })
+              }
+            </div>
+          </div>
         </div>
     </div>
   )

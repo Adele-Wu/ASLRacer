@@ -111,3 +111,27 @@
 .fs2 {
     width: 5rem;
 } 
+
+.centerTrophy {
+    margin-top: 3rem;
+}
+
+.hsName {
+    font-size: 2rem;
+    width: 5rem;
+    margin: 0;
+    margin-right: 5rem;
+    padding: 0;
+}
+
+.hsScore {
+    font-size: 2rem;
+    width: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.allFlex{
+    display: flex;
+    margin-left: 3rem;
+}
