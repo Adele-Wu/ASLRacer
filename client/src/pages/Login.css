@@ -82,6 +82,11 @@ textarea::placeholder{
     color: white;
 }
 
+label {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
 /* ---------- register / sign up ---------- */
 .registerButton {
     margin-top: 2rem;
@@ -102,4 +107,3 @@ textarea::placeholder{
     margin-top: 5rem;
     font-size: 2rem;
 }
-

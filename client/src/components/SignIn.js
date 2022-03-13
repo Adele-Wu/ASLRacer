@@ -46,16 +46,16 @@ function SignIn() {
       <div className="empty1"></div>
         <div className="login center">
         <h1>Login</h1>
+        <label>Username:</label>
         <input
           type="text"
-          placeholder="Username..."
           onChange={(e) => {
             setUsername(e.target.value);
           }}
         />
+        <label>Password:</label>
         <input
           type="password"
-          placeholder="Password..."
           onChange={(e) => {
             setPassword(e.target.value);
           }}
