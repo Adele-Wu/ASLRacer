@@ -8,7 +8,7 @@ We were inspired by the Inclusitivty and Machine Leaning tracks. One of our memb
 You may be familiar with Type Racer, an online game around typing. ASL Racer is a similar concept. A word is displayed on the screen and your job is to sign the word. You have 60 seconds to sign as many words as you can. You can track your own high score and compete with others on a global leaderboard.
 
 ## How we built it
-The sign language portion of the project utilizes Tensorflow Object Detection and Python. We credit much of this part to Nicholas Renotte, a guy that we found on YouTube.
+The sign language portion of the project utilizes Tensorflow Object Detection and Python. We credit much of this part to Nicholas Renotte, a guy that we found on YouTube [Video](https://www.youtube.com/watch?v=ZTSRZt04JkY&t=1939s).
 The web portion utilizes HTML, JavaScript, CSS, React, NodeJS, Express, MySql, RTMP (Real Time Messaging Protocol), PM2, and Google Cloud Platform.
 
 ## Challenges we ran into
