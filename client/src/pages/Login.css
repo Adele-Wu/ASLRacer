@@ -29,6 +29,12 @@
 input {
     background-color: gray;
     color: white;
+    display: block;
+
+    outline: 0;
+    border: 0;
+    padding: 0.5rem;
+    width: 18rem
 }
 
 input[type="text"]
