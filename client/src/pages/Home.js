@@ -26,7 +26,7 @@ function Home() {
             {
               loginStatus === false? (
                   <>
-                      <button onClick={() => history.push("/login")}>Login In</button>
+                      <button onClick={() => history.push("/login")}>Log In</button>
                       <button onClick={() => history.push("/signup")}>Sign Up</button>
                   </> 
               ): (
