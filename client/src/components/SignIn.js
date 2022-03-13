@@ -45,7 +45,7 @@ function SignIn() {
     <div className="section2">
       <div className="empty1"></div>
         <div className="login center">
-        <h1>Login</h1>
+        <h1 className="textCenter">Login</h1>
         <label>Username:</label>
         <input
           type="text"
@@ -61,7 +61,7 @@ function SignIn() {
           }}
         />
         
-        <div>
+        <div className="center">
           <button className="logInButton" onClick={login}> Login </button>
         </div>
       </div>

@@ -28,7 +28,7 @@ function SignUp() {
           <div className="section2">
             <div className="empty1"></div>
               <div className="center">
-                <h1 className="register">Registration</h1>
+                <h1 className="register textCenter">Registration</h1>
                 <label>Username:</label>
                 <input
                   type="text"
@@ -57,7 +57,9 @@ function SignUp() {
                     setPasswordReg(e.target.value);
                   }}
                 />
-                <button className="registerButton" onClick={register}> Register </button>
+                <div className="center"> 
+                  <button className="registerButton center" onClick={register}> Register </button>
+                </div>
               </div>
             </div>
           </div>

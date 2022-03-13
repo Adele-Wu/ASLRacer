@@ -11,7 +11,10 @@
 .center {
     margin: auto;
     width: 20rem;
-    text-align: center
+}
+
+.textCenter {
+    text-align: center;
 }
 
 .section2 {
@@ -27,7 +30,7 @@
 }
 
 input {
-    background-color: gray;
+    background-color: rgb(160, 158, 158);
     color: white;
     display: block;
 

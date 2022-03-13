@@ -93,7 +93,7 @@
 .center {
     margin: auto;
     width: 20rem;
-    text-align: center
+    /* text-align: center */
 }
 
 .hsText {
