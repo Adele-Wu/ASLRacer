@@ -31,7 +31,7 @@ function Home() {
                   </> 
               ): (
                 <>
-                  //TODO: display user
+                  // TODO: display user
                   </> 
               )
             }
