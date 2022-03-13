@@ -1,8 +1,8 @@
 # ASLRacer
-A game where you use American Sign Language to challenge yourself to learn sign language.
+ASL Racer game where you use American Sign Language to challenge yourself to learn sign language.
 
 ## Inspiration
-We were inspired by the Inclusitivty and Machine Leaning tracks. One of our members came across LinkedIn post about using Machine Learning to detect sign language. Language barriers are real, and it is especially prominent when it comes to sign language, as it is not that common in our society. This creates a gap between people who can't speak or hear and the rest of our society. We aim to use technology to help close that. We hope that ASL Racer will encourage people to learn American Sign Language (ASL) by treating learning as a game. 
+We were inspired by the Inclusitivty and Machine Leaning tracks. One of our members came across LinkedIn post about using Machine Learning to detect sign language. Language barriers are real, and it is especially prominent when it comes to sign language, as it is not that common in our society. This creates a gap between people who can't speak or hear and the rest of our society. We aim to use technology to help close that. We hope that ASL Racer will encourage people to learn American Sign Language (ASL) by treating learning as a game. Team Clickbyte believes that games can be beneficial to your personal growth and do good in our society.
 
 ## What it does
 You may be familiar with Type Racer, an online game around typing. ASL Racer is a similar concept. A word is displayed on the screen and your job is to sign the word. You have 60 seconds to sign as many words as you can. You can track your own high score and compete with others on a global leaderboard.
