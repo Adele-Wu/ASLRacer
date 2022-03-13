@@ -1,22 +1,97 @@
+/* section 1 */
+.accountHeader {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    
+    position: absolute;
+    right: 150px;
+}
+.accountHeader button{
+    background-color: white;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 50rem;
+    margin-left: 2rem;
+    
+    font-size: 1.25rem;
+    color: #2F364B;
+}
+
 .section1{
-position: static;
-width: 892px;
-height: 124px;
-left: 0px;
-top: 0px;
+    background: linear-gradient(#2F364B, #262B3D);
+    min-height: 50vh;
 
-font-family: 'DM Sans';
-font-style: normal;
-font-weight: 500;
-font-size: 48px;
-line-height: 62px;
+    color: white;
 
-color: #000000;
+    padding: 10rem;
+    padding-top: 2rem;
+    border-bottom-right-radius: 10rem;
+}
+
+@media only screen and (min-width: 1200px){
+    .flexbox{
+        Display: flex 
+    }
+}
+
+.section1 h1 {
+    font-size: 5rem;
+    padding-top: 5rem;
+}
+
+.section1 h4 {
+    font-size: 1.5rem;
+    padding-right: 2rem;
+}
+
+.playButton {
+    margin-top: 2rem;
+
+    background-color: #00bac7;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-radius: 50rem;
+    
+    font-size: 2rem;
+    color: white;
+}
+
+.asl_pic{
+    width: 40vw;
 }
 
 .auto{
     flex: none;
-order: 0;
-flex-grow: 0;
-margin: 0px 0px;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+/* section 2 - high scores*/
+.section2 {
+    padding-top: 3rem; 
+    padding-bottom: 4rem; 
+}
+
+/* .centerHS {
+    margin: auto;
+    width: 15rem;
+}
+
+.centerTrophy {
+    margin: auto;
+    width: 20rem;
+    margin-left: 3vw;
+} */
+
+.center {
+    margin: auto;
+    width: 20rem;
+    text-align: center
 }
