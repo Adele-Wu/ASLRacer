@@ -1,10 +1,11 @@
 import React from 'react'
 import SignIn from '../components/SignIn'
+import './Login.css';
 
 function Login() {
   return (
-    <div>
-        <h1>Login Page</h1> 
+    <div className='section'>
+        {/* <h1>Login Page</h1>  */}
         <SignIn/>
     </div>
   )

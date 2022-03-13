@@ -1,0 +1,76 @@
+.section {
+    background: linear-gradient(#2F364B, #262B3D);
+    height: 100vh;
+}
+
+.empty1 {
+    background-color: #2F364B;
+    height: 5rem;
+}
+
+.center {
+    margin: auto;
+    width: 20rem;
+    text-align: center
+}
+
+.section2 {
+    padding-top: 0;
+    background-color: white;
+    max-width: 50rem;
+    margin: auto;
+}
+
+.login{
+    margin-top: 10rem;
+    font-size: 2rem;
+}
+
+input {
+    background-color: gray;
+    color: white;
+}
+
+input[type="text"]
+{
+    font-size:24px;
+    margin-bottom: 2rem;
+}
+
+input[type="password"]
+{
+    font-size:24px;
+    margin-bottom: 2rem;
+}
+
+textarea::placeholder{
+    color: lightgray
+}
+
+::placeholder {
+    color: lightgray;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: lightgray;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: lightgray;
+  }
+
+  .logInButton {
+    margin-top: 2rem;
+
+    background-color: #00bac7;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-radius: 50rem;
+    
+    font-size: 2rem;
+    color: white;
+}

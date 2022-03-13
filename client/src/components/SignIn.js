@@ -12,7 +12,6 @@ function SignIn() {
   const [loginStatus, setLoginStatus] = useState("");
 
 
-
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
       //checking
@@ -43,8 +42,9 @@ function SignIn() {
 
 
   return (
-    <div>
-        <div className="login">
+    <div className="section2">
+      <div className="empty1"></div>
+        <div className="login center">
         <h1>Login</h1>
         <input
           type="text"
@@ -60,7 +60,10 @@ function SignIn() {
             setPassword(e.target.value);
           }}
         />
-        <button onClick={login}> Login </button>
+        
+        <div>
+          <button className="logInButton" onClick={login}> Login </button>
+        </div>
       </div>
       <h1>{loginStatus}</h1>
     </div>

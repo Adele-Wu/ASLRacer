@@ -32,7 +32,7 @@ function Home() {
               ): (
                 <>
                   // TODO: display user
-                  </> 
+                 </> 
               )
             }
           </div>
