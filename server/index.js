@@ -57,6 +57,13 @@ app.get("/login", (req, res) => {
   }
 });
 
+app.get("/getUsers", (req, res) => {
+
+  db.query("select U.username, D.scores from User U, User_Dashboard D where U.id = D.User_id", (err, result) => {
+    res.send(result) 
+  })
+})
+
 
 //post
 

@@ -8,6 +8,8 @@ import './Game.css';
 
 
 function Game() {
+
+
   let history = useHistory() 
 
   const webcamRef = useRef(null);
@@ -18,7 +20,11 @@ function Game() {
   const [playerName, setPlayerName] = useState("")
   
   const [startGame, setstartGame] = useState(false) 
-  const [counter_timer, setCounter_timer] = useState(60);
+  // in reality, we would use 60
+  // const [counter_timer, setCounter_timer] = useState(60); 
+
+  // for testing purposes, we will use 15
+  const [counter_timer, setCounter_timer] = useState(15);
   const [score, setScore] = useState(0)
   const [count, setCount] = useState(0)  
 
@@ -157,18 +163,34 @@ function Game() {
 
   return (
     <div className='section'>
-        <h5 style={{color: "white"}}>Sign this word: {shuffling_word} </h5>
-        <h5 style={{color: "white"}}>Time Left: { counter_timer } sec. </h5>
-        <h5 style={{color: "white"}}>Current Count: {count} </h5>
-        <h5 style={{color: "white"}}>High Score: {score}</h5>
+
+
+      <div className='flexbox'>
+        <div className='flex1'>
+          <div className='item1'>Sign this word: 
+            <span className='bold'> {shuffling_word} </span>
+          </div>
+          <div className='item1'>Time Left: 
+            <span className='bold'> {counter_timer} </span> sec. 
+          </div>
+        </div>
+        <div className='flex2'>
+          <div className='item2'>Current Count: 
+            <span className='bold'> {count} </span>
+          </div>
+          <div className='item2'>High Score: 
+            <span className='bold'> {score} </span>
+          </div>
+        </div>
+      </div>
           {
             loginStatus === true? (
               counter_timer === 0? (
-                <div>
-                  <h1>Game ends!</h1> 
-                  <h5>You Score is {score} </h5> 
-                  <h1 style={{color: "white"}}>Hi {playerName}</h1> 
-                </div> 
+                <div className='popBox'>
+                  <h1 style={{color: "gray"}} className='center gameOverText'>Time's Up!</h1> 
+                  <h1 style={{color: "gray"}} className='center gameOverText'>Congrats {playerName}</h1> 
+                  <h1 style={{color: "gray"}} className='center gameOverText'>Your Score is {score}</h1> 
+                </div>
               ) : (
                 <div>
                 <div className="webcam">
@@ -207,15 +229,17 @@ function Game() {
                 </div> 
               )
             ) : (
-              <div> 
-                <h1 style={{color: "white"}}>Login or Register to play</h1>
-                <button onClick={() => history.push("/login")}>Login In</button>
-                <button onClick={() => history.push("/signup")}>Sign Up</button>
+              <div className='popBox'> 
+                <h1 className='center logOrRegToPlay'>Login or Register to Play</h1>
+                <div className='center'>
+                  <button className='logAndRegButton' onClick={() => history.push("/login")}>Log In</button>
+                  <button className='logAndRegButton' onClick={() => history.push("/signup")}>Sign Up</button>
+                </div>
               </div> 
             )
           }
          
-        <button onClick={() => history.push("/")}>Home</button> 
+         <button className='homeButton' onClick={() => history.push("/")}>Home</button> 
     </div>
   )
 }

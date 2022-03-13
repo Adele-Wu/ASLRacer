@@ -7,6 +7,8 @@ function Home() {
   let history = useHistory() 
 
   const [loginStatus, setLoginStatus] = useState(false)
+  const [getPlayers, setgetPlayers] = useState([]) 
+  const [getScores, setScores] = useState([]) 
 
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
@@ -16,6 +18,12 @@ function Home() {
         setLoginStatus(response.data.loggedIn);
       }
     });
+    Axios.get("http://localhost:3001/getUsers").then((response) => {
+      console.log(response) 
+      setgetPlayers(response.data.map((x) => x.username )) 
+      setScores(response.data.map((x) => x.scores )) 
+
+    })
   }, []);
 
   return (
@@ -55,6 +63,24 @@ function Home() {
 
         <div className='section2 center'>
           <h1 className='centerHS' >High Scores</h1>
+          {
+            getPlayers.map((name) => {
+              return (
+                <>
+                  <h5>{name}</h5> 
+                </>
+              )
+            })
+          }
+          {
+             getScores.map((scores) => {
+              return (
+                <>
+                  <h5>{scores}</h5> 
+                </>
+              )
+            })
+          }
           <img className='centerTrophy' width="300" height="250" 
             src="https://cdn.discordapp.com/attachments/751224555267162193/952110054381875250/advantage-trophy-logo.png" />
         </div>
