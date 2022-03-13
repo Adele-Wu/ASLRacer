@@ -9,6 +9,8 @@ const labelMap = {
 
 // Define a drawing function
 export const drawRect = (boxes, classes, scores, threshold, imgWidth, imgHeight, ctx)=>{
+    let score = 0 
+    let label = "" 
     for(let i=0; i<=boxes.length; i++){
         if(boxes[i] && classes[i] && scores[i]>threshold){
             // Extract variables
@@ -26,6 +28,10 @@ export const drawRect = (boxes, classes, scores, threshold, imgWidth, imgHeight,
             ctx.fillText(labelMap[text]['name'] + ' - ' + Math.round(scores[i]*100)/100, x*imgWidth, y*imgHeight-10)
             ctx.rect(x*imgWidth, y*imgHeight, width*imgWidth/2, height*imgHeight/1.5);
             ctx.stroke()
+
+            score = Math.round(scores[i]*100)/100
+            label = labelMap[text]['name']
         }
     }
+    return [score, label] 
 }
