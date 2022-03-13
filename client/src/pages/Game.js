@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import * as tf from "@tensorflow/tfjs";
 import Webcam from "react-webcam";
-import {drawRect} from "../assets/labels"; 
+import { drawRect } from "../assets/labels"; 
 import  Axios  from 'axios'
 
 
@@ -18,13 +18,18 @@ function Game() {
   const [loginStatus, setLoginStatus] = useState(false)
   const [playerName, setPlayerName] = useState("")
   
+  
   const [startGame, setstartGame] = useState(false) 
-  const [counter_timer, setCounter_timer] = useState(8);
+  const [counter_timer, setCounter_timer] = useState(10);
   const [score, setScore] = useState(0)
   const [count, setCount] = useState(0)  
+  const [score_label, setScore_label] = useState(0) 
+  const [text_label, setText_label] = useState("") 
+  const [store_scores, setStore_score] = useState([]) 
 
 
 
+  var arr = ["No" , "Yes", "Thank You", "I Love You"];
 
 
   useEffect(() => {
@@ -41,8 +46,26 @@ function Game() {
 
 
 
+  const shuffle = (array) => {
+    let currentIndex = array.length,  randomIndex;
+  
+    while (currentIndex != 0) {
+  
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
 
 
+
+
+
+  let shuffling_word = shuffle(arr)[0]
 
 
 
@@ -88,15 +111,32 @@ function Game() {
       const classes = await obj[2].array()
       const scores = await obj[4].array()
 
-      console.log("score: ", scores[0]) 
-      console.log("classes: ", classes[0]) 
       
       // Draw mesh
       const ctx = canvasRef.current.getContext("2d");
 
       // 5. TODO - Update drawing utility
       // drawSomething(obj, ctx)  
-      requestAnimationFrame(()=>{drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)}); 
+      requestAnimationFrame(()=>{drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)});
+      
+      setScore_label(drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[0])
+      setText_label(drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[1])
+      
+      console.log("score: ", drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[0]) 
+      console.log("text: ", drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[1])
+
+      setStore_score([...drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[1]])
+
+      //console.log("word shuffle: ", shuffling_word) 
+      if (drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[1] === arr[0]) {
+        console.log("called check word")
+        if (drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[0] >= 0.90) {
+          console.log("score increases: ", count)
+            setCount(count + 1)
+        }
+      }
+
+
 
       tf.dispose(img)
       tf.dispose(resized)
@@ -109,11 +149,11 @@ function Game() {
 
   useEffect(()=>{runCoco()},[]);
 
-
+  console.log(store_scores) 
 
   return (
     <div>
-        <h5>Sign this word: </h5>
+        <h5>Sign this word: {shuffling_word} </h5>
         <h5>Time Left: { counter_timer } sec. </h5>
         <h5>Current Count: {count} </h5>
         <h5>High Score: {score}</h5>
