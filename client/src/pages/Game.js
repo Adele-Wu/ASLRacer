@@ -190,6 +190,9 @@ function Game() {
                   <h1 style={{color: "gray"}} className='center gameOverText'>Time's Up!</h1> 
                   <h1 style={{color: "gray"}} className='center gameOverText'>Congrats {playerName}</h1> 
                   <h1 style={{color: "gray"}} className='center gameOverText'>Your Score is {score}</h1> 
+                  <div className='centerPlayAgain'>
+                    <button className='playAgainButton' onClick={() => history.push("/game")}>Play Again</button>
+                  </div>
                 </div>
               ) : (
                 <div>

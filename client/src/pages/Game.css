@@ -13,6 +13,7 @@
 .flex1 {
     font-size: 2rem;
     margin: auto;
+    width: 30rem;
 }
 
 .item1 {
@@ -94,4 +95,27 @@
 
 .gameOverText {
     padding-bottom: .5rem;
+}
+
+.playAgainButton {
+    /* margin-left: 38%; */
+    margin-top: 2rem;
+
+    background-color: #00bac7;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-radius: 50rem;
+    
+    font-size: 2rem;
+    color: white;
+}
+
+.centerPlayAgain {
+    /* width: 50vw; */
+    width: 14.5rem;
+    margin: auto;
+    /* padding: auto; */
 }
