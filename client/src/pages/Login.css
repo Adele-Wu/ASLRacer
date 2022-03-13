@@ -29,6 +29,12 @@
 input {
     background-color: gray;
     color: white;
+    display: block;
+
+    outline: 0;
+    border: 0;
+    padding: 0.5rem;
+    width: 18rem
 }
 
 input[type="text"]
@@ -50,17 +56,17 @@ textarea::placeholder{
 ::placeholder {
     color: lightgray;
     opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: lightgray;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-   color: lightgray;
-  }
+}
 
-  .logInButton {
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: lightgray;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: lightgray;
+}
+
+.logInButton {
     margin-top: 2rem;
 
     background-color: #00bac7;
@@ -70,7 +76,7 @@ textarea::placeholder{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
     border-radius: 50rem;
-    
+
     font-size: 2rem;
     color: white;
 }

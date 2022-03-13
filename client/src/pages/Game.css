@@ -1,4 +1,93 @@
 .section {
     background: linear-gradient(#2F364B, #262B3D);
     height: 100vh;
+    padding: 2rem
+}
+
+@media only screen and (min-width: 1200px){
+    .flexbox{
+        Display: flex 
+    }
+}
+
+.flex1 {
+    font-size: 2rem;
+    margin: auto;
+}
+
+.item1 {
+    margin: 0;
+    padding: .5rem;
+    color: gray;
+}
+
+.flex2 {
+    font-size: 1.5rem;
+    color: gray;
+}
+
+.item1 {
+    margin: 0;
+    padding: .5rem;
+    color: gray;
+}
+
+.bold{
+    font-weight: bold;
+    color: white;
+}
+
+.popBox {
+    background-color: white;
+    width: 50vw;
+    color: #262B3D;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+.center {
+    margin: auto;
+    width: fit-content;
+}
+
+.logOrRegToPlay {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.logAndRegButton {
+    margin: 2rem;
+
+    background-color: #00bac7;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-radius: 50rem;
+
+    font-size: 2rem;
+    color: white;
+}
+
+.homeButton {
+    float: right;
+    margin: 2rem;
+
+    background-color: white;
+    outline: none;
+    border: none;
+    padding: .5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 40rem;
+
+    font-size: 1.5rem;
+    color: #262B3D;
+}
+
+.gameOverText {
+    padding-bottom: .5rem;
 }
