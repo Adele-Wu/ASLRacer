@@ -29,7 +29,7 @@ CREATE TABLE `User` (
   `email` varchar(150) NOT NULL,
   `phone` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'Javier','$2b$10$gUo4EtjY..hkYBU.VurqXefvV3xXbUYXqq7UBb8FcrhDiS5M3Me/2','javier@mail.com',874747);
+INSERT INTO `User` VALUES (1,'Javier','$2b$10$gUo4EtjY..hkYBU.VurqXefvV3xXbUYXqq7UBb8FcrhDiS5M3Me/2','javier@mail.com',874747),(3,'David','$2b$10$cp2PIwPKOPsNzgm7l1caHOsq5yNMHHY4jBUVUTaoAaN6Yl3hPJMoG','David@email.com',665),(13,'Johnson','$2b$10$Qw2RgM.bjLLG.tGZHUmUMueYFL8z2Pd5cxI7RFfULpevrQ8CHLryW','johnson@mail.com',93848348),(14,'Nani','$2b$10$7e2O47gkVyT2wCgPDjZMbOTH.lHZlEaJ.bWtyJ7so4Z.QmCckiUw2','Nani@mail.com',38399834);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,6 +66,7 @@ CREATE TABLE `User_Dashboard` (
 
 LOCK TABLES `User_Dashboard` WRITE;
 /*!40000 ALTER TABLE `User_Dashboard` DISABLE KEYS */;
+INSERT INTO `User_Dashboard` VALUES (1,1,32,'2010-12-31 01:15:00'),(2,3,18,'2010-12-31 01:15:00'),(3,13,55,'2010-12-31 01:15:00');
 /*!40000 ALTER TABLE `User_Dashboard` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -78,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-11 21:57:43
+-- Dump completed on 2022-03-13  0:49:46
