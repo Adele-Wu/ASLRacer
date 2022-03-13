@@ -15,10 +15,13 @@ The web portion utilizes HTML, JavaScript, CSS, React, NodeJS, Express, MySql, R
 Amongst our many challenges, two of our greatest challenges were working with Tensorflow and setting up our server. With Tensorflow, we had many problems. One of the problems we had was installing Tensorflow on a Mac with the M1 processor. Another problem we had was getting the Tensorflow to work with the webcam. And regarding the server, we had some problems getting the server to work on different operating systems. We also learned that Domain.com is not listed in Googles verification list.
 
 ## Accomplishments that we're proud of
-We are extremely proud of the concept of our project and that we truly believe this is an idea that can help bridge the gap between people who rely on sign language to communicate and the rest of society. We are also proud of our ability to implement sign language detection onto our web application, as well as the visual design of the project.
+We are extremely proud of the concept of our project and that we truly believe this is an idea that can help bridge the gap between people who rely on sign language to communicate and the rest of society, as well as entertainment and social good. We are also proud of our ability to implement sign language detection onto our web application, as well as the visual design of the project.
 
 ## What we learned
 We learned a lot! Amongst everything that we learned, one common challenge taught us about packages, especially what it takes to install certain packages onto certain operating systems. Additionally, we were introduced to machine learning. 
 
 ## What's next for ASL Racer
 We plan for ASL Racer to have real time competition, where individuals can compete with others in real time, like Type Racer. We thought about needing to use web sockets. Another task for ASL Racer is continue to train the model and have more words. 
+
+## UI / UX Design
+[Link to our Figma Design](https://www.figma.com/file/rLZRVjclQd4Bng61g1ijDs/ASL-Racer-Design?node-id=0%3A3)
