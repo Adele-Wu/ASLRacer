@@ -34,7 +34,8 @@ input {
     outline: 0;
     border: 0;
     padding: 0.5rem;
-    width: 18rem
+    width: 21rem;
+    height: 2rem;
 }
 
 input[type="text"]
@@ -82,6 +83,23 @@ textarea::placeholder{
 }
 
 /* ---------- register / sign up ---------- */
-.center2 {
-    margin: auto;
+.registerButton {
+    margin-top: 2rem;
+
+    background-color: #00bac7;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-radius: 50rem;
+
+    font-size: 2rem;
+    color: white;
 }
+
+.registration{
+    margin-top: 5rem;
+    font-size: 2rem;
+}
+
