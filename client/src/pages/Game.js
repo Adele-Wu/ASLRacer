@@ -6,6 +6,8 @@ import {drawRect} from "../assets/labels";
 import  Axios  from 'axios'
 
 
+
+
 function Game() {
   let history = useHistory() 
 
@@ -14,7 +16,14 @@ function Game() {
 
 
   const [loginStatus, setLoginStatus] = useState(false)
-  const [playerName, setPlayerName] = useState("") 
+  const [playerName, setPlayerName] = useState("")
+  
+  const [startGame, setstartGame] = useState(false) 
+  const [counter_timer, setCounter_timer] = useState(8);
+  const [score, setScore] = useState(0)
+  const [count, setCount] = useState(0)  
+
+
 
 
 
@@ -25,9 +34,18 @@ function Game() {
         Axios.defaults.withCredentials = true;
         setLoginStatus(response.data.loggedIn);
         setPlayerName(response.data.user[0].username) 
+        counter_timer > 0 && setTimeout(() => setCounter_timer(counter_timer - 1), 1000);
       }
     });
-  }, []);
+  }, [counter_timer]);
+
+
+
+
+
+
+
+
 
   const runCoco = async () => {
     
@@ -69,6 +87,9 @@ function Game() {
       const boxes = await obj[1].array()
       const classes = await obj[2].array()
       const scores = await obj[4].array()
+
+      console.log("score: ", scores[0]) 
+      console.log("classes: ", classes[0]) 
       
       // Draw mesh
       const ctx = canvasRef.current.getContext("2d");
@@ -93,12 +114,19 @@ function Game() {
   return (
     <div>
         <h5>Sign this word: </h5>
-        <h5>Time Left:</h5>
-        <h5>Current Count: </h5>
-        <h5>High Score: </h5>
+        <h5>Time Left: { counter_timer } sec. </h5>
+        <h5>Current Count: {count} </h5>
+        <h5>High Score: {score}</h5>
           {
             loginStatus === true? (
-              <div>
+              counter_timer === 0? (
+                <div>
+                  <h1>Game ends!</h1> 
+                  <h5>You Score is {score} </h5> 
+                  <h1>Hi {playerName}</h1> 
+                </div> 
+              ) : (
+                <div>
                 <div className="webcam">
                   <Webcam
                       ref={webcamRef}
@@ -132,7 +160,8 @@ function Game() {
                     />
                   </div>
                   <h1>Hi {playerName}</h1> 
-              </div> 
+                </div> 
+              )
             ) : (
               <div> 
                 <h1>Login or Register to play</h1>

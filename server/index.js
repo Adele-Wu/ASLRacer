@@ -67,33 +67,25 @@ app.post("/register", (req, res) => {
   const email = req.body.email
   const phone = req.body.phone
 
-  // console.log("username: ", username) 
-  // console.log("password: ", password) 
-  // console.log("email: ", email) 
-  // console.log("phone: ", phone) 
-
 
   const saltRounds = 10
 
   bcrypt.hash(password, saltRounds, (err, hash) => {
     if (err) {
-      console.log(err);
+      console.log("hueshueshu")
       res.send({ err: err });
     }
 
     console.log("username: ", username) 
     console.log("password: ", hash) 
     console.log("email: ", email) 
-    console.log("phone: ", phone)
+    console.log("phone: ", phone) 
+
 
     db.query(
       "INSERT INTO User (username, password, email, phone) VALUES (?,?,?,?)",
-      [username, hash, email, phone],
-      (err, result) => {
-        console.log("asdfghjkl;");
-        res.send({ err: err });
-      }
-    );
+      [username, hash, email, phone]
+    )
   });
 
   
