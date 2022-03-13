@@ -80,3 +80,8 @@ textarea::placeholder{
     font-size: 2rem;
     color: white;
 }
+
+/* ---------- register / sign up ---------- */
+.center2 {
+    margin: auto;
+}

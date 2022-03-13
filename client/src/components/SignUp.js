@@ -26,7 +26,7 @@ function SignUp() {
     <div>
         <div className="registration section">
           <div className="section2">
-          <div className="empty1 "></div>
+          <div className="empty1"></div>
             <h1 className="register">Registration</h1>
             <label>Username</label>
             <input

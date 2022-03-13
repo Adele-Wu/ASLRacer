@@ -62,7 +62,7 @@ function Home() {
           </div>
 
         <div className='section2 center'>
-          <h1 className='centerHS' >High Scores</h1>
+          <h1 className='centerHS hsText'>High Scores</h1>
           {
             getPlayers.map((name) => {
               return (

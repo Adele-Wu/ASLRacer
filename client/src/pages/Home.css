@@ -95,3 +95,19 @@
     width: 20rem;
     text-align: center
 }
+
+.hsText {
+    font-size: 3rem;
+}
+
+.flexScores{
+    display: flex;
+}
+
+.fs1 {
+    width: 10rem;
+}
+
+.fs2 {
+    width: 5rem;
+} 
