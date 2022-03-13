@@ -39,7 +39,7 @@ function Home() {
                   </> 
               ): (
                 <>
-                  // TODO: display user
+                  <button className='.accountHeader button'>Log Out</button>
                  </> 
               )
             }
