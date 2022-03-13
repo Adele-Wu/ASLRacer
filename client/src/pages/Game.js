@@ -18,9 +18,17 @@ function Game() {
   const [playerName, setPlayerName] = useState("")
   
   const [startGame, setstartGame] = useState(false) 
-  const [counter_timer, setCounter_timer] = useState(8);
+  const [counter_timer, setCounter_timer] = useState(60);
   const [score, setScore] = useState(0)
   const [count, setCount] = useState(0)  
+
+
+  const [score_label, setScore_label] = useState(0) 
+  const [text_label, setText_label] = useState("") 
+  const [store_scores, setStore_score] = useState([]) 
+
+  var arr = ["No" , "Yes", "Thank You", "I Love You"];
+
 
 
 
@@ -35,6 +43,25 @@ function Game() {
       }
     });
   }, [counter_timer]);
+
+
+
+  const shuffle = (array) => {
+    let currentIndex = array.length,  randomIndex;
+
+    while (currentIndex != 0) {
+
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+  }
+
+  let shuffling_word = shuffle(arr)[0]
 
 
 
@@ -101,6 +128,26 @@ function Game() {
       tf.dispose(expanded)
       tf.dispose(obj)
 
+      requestAnimationFrame(()=>{drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)});
+
+      setScore_label(drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[0])
+      setText_label(drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[1])
+
+      console.log("score: ", drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[0]) 
+      console.log("text: ", drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[1])
+
+      setStore_score([...drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[1]])
+
+      //console.log("word shuffle: ", shuffling_word) 
+      if (drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[1] === arr[0]) {
+        console.log("called check word")
+        if (drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)[0] >= 0.90) {
+          console.log("score increases: ", count)
+            setCount(count + 1)
+        }
+      }
+
+
     }
   };
 
@@ -110,17 +157,17 @@ function Game() {
 
   return (
     <div className='section'>
-        <h5>Sign this word: </h5>
-        <h5>Time Left: { counter_timer } sec. </h5>
-        <h5>Current Count: {count} </h5>
-        <h5>High Score: {score}</h5>
+        <h5 style={{color: "white"}}>Sign this word: {shuffling_word} </h5>
+        <h5 style={{color: "white"}}>Time Left: { counter_timer } sec. </h5>
+        <h5 style={{color: "white"}}>Current Count: {count} </h5>
+        <h5 style={{color: "white"}}>High Score: {score}</h5>
           {
             loginStatus === true? (
               counter_timer === 0? (
                 <div>
                   <h1>Game ends!</h1> 
                   <h5>You Score is {score} </h5> 
-                  <h1>Hi {playerName}</h1> 
+                  <h1 style={{color: "white"}}>Hi {playerName}</h1> 
                 </div> 
               ) : (
                 <div>
@@ -156,12 +203,12 @@ function Game() {
                             }}
                     />
                   </div>
-                  <h1>Hi {playerName}</h1> 
+                  <h1 style={{color: "white"}}>Hi {playerName}</h1> 
                 </div> 
               )
             ) : (
               <div> 
-                <h1>Login or Register to play</h1>
+                <h1 style={{color: "white"}}>Login or Register to play</h1>
                 <button onClick={() => history.push("/login")}>Login In</button>
                 <button onClick={() => history.push("/signup")}>Sign Up</button>
               </div> 
