@@ -3,9 +3,8 @@ import { useHistory } from 'react-router-dom'
 import * as tf from "@tensorflow/tfjs";
 import Webcam from "react-webcam";
 import {drawRect} from "../assets/labels"; 
-import  Axios  from 'axios'
-
-
+import  Axios  from 'axios';
+import './Game.css';
 
 
 function Game() {
@@ -22,8 +21,6 @@ function Game() {
   const [counter_timer, setCounter_timer] = useState(8);
   const [score, setScore] = useState(0)
   const [count, setCount] = useState(0)  
-
-
 
 
 
@@ -112,7 +109,7 @@ function Game() {
 
 
   return (
-    <div>
+    <div className='section'>
         <h5>Sign this word: </h5>
         <h5>Time Left: { counter_timer } sec. </h5>
         <h5>Current Count: {count} </h5>
